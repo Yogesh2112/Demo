@@ -35,7 +35,10 @@ jobs:
         
 
       - name: Pull Vercel Environment Information for Backend
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+        run: |
+          echo "Running Vercel Pull in Current Directory: $(pwd)"
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+          echo "Running Vercel Pull in Current Directory: $(pwd)"
 
       - name: Build Backend Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
@@ -63,7 +66,10 @@ jobs:
         run: echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}" >> $GITHUB_ENV
 
       - name: Pull Vercel Environment Information for Frontend
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
+        run: |
+          echo "Running Vercel Pull in Current Directory: $(pwd)"
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
+          echo "Running Vercel Pull in Current Directory: $(pwd)"
 
       - name: Build Frontend Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
