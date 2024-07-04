@@ -41,7 +41,7 @@ function ShoppingCartContent({ locale }) {
     const getAllEntries = async () => {
       try {
         const response = await axios.get(
-          `https://demo-gzko.vercel.app/carts?customerId=${customerId}`
+          `https://demo-iota-lime.vercel.app/carts?customerId=${customerId}`
         );
         const productsInCart = response.data.lineItems;
         const updatedProducts = productsInCart.map((item) => {
@@ -124,7 +124,7 @@ function ShoppingCartContent({ locale }) {
 
     const handleRemoveItem = async (id) => {
     try {
-      const response = await axios.post(`https://demo-gzko.vercel.app/removecart`, {
+      const response = await axios.post(`https://demo-iota-lime.vercel.app/removecart`, {
         id,
         customerId,
       });

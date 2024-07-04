@@ -35,7 +35,7 @@ const OrderHistoryPageContent = ({ locale }) => {
 
   const fetchOrderHistory = (customerId) => {
     axios
-      .get(`https://demo-gzko.vercel.app/orders/${customerId}`)
+      .get(`https://demo-iota-lime.vercel.app//orders/${customerId}`)
       .then((response) => {
         const orderData = response.data.order;
         setOrderHistory(orderData);

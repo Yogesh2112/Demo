@@ -41,7 +41,7 @@ function ProductDetailPage() {
 
     try {
       console.log("data", customerId, productId, quantity);
-      const response = await axios.post("https://demo-gzko.vercel.app//carts", {
+      const response = await axios.post("https://demo-iota-lime.vercel.app/carts", {
         customerId,
         productId,
         quantity,

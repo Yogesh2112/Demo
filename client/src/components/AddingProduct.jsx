@@ -48,7 +48,7 @@ const AddingProductContent = ({ locale }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("https://demo-gzko.vercel.app//categories");
+        const response = await axios.get("https://demo-iota-lime.vercel.app///categories");
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -57,7 +57,7 @@ const AddingProductContent = ({ locale }) => {
 
     const fetchProductTypes = async () => {
       try {
-        const response = await axios.get("https://demo-gzko.vercel.app/product-types");
+        const response = await axios.get("https://demo-iota-lime.vercel.app//product-types");
         setProductTypes(response.data);
       } catch (error) {
         console.error("Error fetching product types:", error);
@@ -144,7 +144,7 @@ const AddingProductContent = ({ locale }) => {
       };
       console.log("product", productData);
 
-      await axios.post("https://demo-gzko.vercel.app/products", productData);
+      await axios.post("https://demo-iota-lime.vercel.app//products", productData);
 
       // Reset form after successful submission
       setSelectedCategory("");

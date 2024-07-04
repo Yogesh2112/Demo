@@ -138,7 +138,7 @@ const SignupContent = ({ locale }) => {
 
     try {
       const response = await axios.post(
-        "https://demo-gzko.vercel.app/customers",
+        "https://demo-iota-lime.vercel.app/customers",
         formData
       );
       console.log(response);
