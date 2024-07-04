@@ -26,12 +26,7 @@ jobs:
       run: npm run build
       working-directory: ./client
 
-    - name: Deploy to Vercel
-      run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
-
     - name: Install server dependencies
       run: npm install
       working-directory: ./server
 
-    - name: Deploy server to Vercel
-      run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
