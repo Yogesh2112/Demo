@@ -17,9 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check sh availability
-        run: sh --version
-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -41,9 +38,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Check sh availability
-        run: sh --version
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
