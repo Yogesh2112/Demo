@@ -35,7 +35,7 @@ const OrderHistoryPageContent = ({ locale }) => {
 
   const fetchOrderHistory = (customerId) => {
     axios
-      .get(`http://localhost:5000/orders/${customerId}`)
+      .get(`https://demo-gzko.vercel.app/orders/${customerId}`)
       .then((response) => {
         const orderData = response.data.order;
         setOrderHistory(orderData);

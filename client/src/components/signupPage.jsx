@@ -138,7 +138,7 @@ const SignupContent = ({ locale }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/customers",
+        "https://demo-gzko.vercel.app/customers",
         formData
       );
       console.log(response);

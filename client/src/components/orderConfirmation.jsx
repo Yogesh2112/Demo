@@ -30,7 +30,7 @@ const OrderConfirmationContent = ({ locale }) => {
     try {
       const customerId = localStorage.getItem("customer");
       const cartResponse = await axios.get(
-        `http://localhost:5000/carts?customerId=${customerId}`
+        `https://demo-gzko.vercel.app/carts?customerId=${customerId}`
       );
 
       if (cartResponse.status !== 200) {
@@ -48,7 +48,7 @@ const OrderConfirmationContent = ({ locale }) => {
   const placeOrder = async () => {
     try {
       const orderResponse = await axios.post(
-        "http://localhost:5000/create-order"
+        "https://demo-gzko.vercel.app/create-order"
       );
 
       if (orderResponse.status !== 200) {
@@ -64,7 +64,7 @@ const OrderConfirmationContent = ({ locale }) => {
 
   const deleteCart = async () => {
     try {
-      const response = await fetch("http://localhost:5000/carts", {
+      const response = await fetch("https://demo-gzko.vercel.app/carts", {
         method: "DELETE",
       });
 

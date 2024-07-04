@@ -68,7 +68,7 @@ function ShippingAddressFormContent({ products, locale }) {
 
     try {
       // console.log(formData)
-      const response = await fetch("http://localhost:5000/shipping-address", {
+      const response = await fetch("https://demo-gzko.vercel.app/shipping-address", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +123,7 @@ function ShippingAddressFormContent({ products, locale }) {
       "Content-Type": "application/json",
     };
     const response = await fetch(
-      "http://localhost:5000/api/create-checkout-session",
+      "https://demo-gzko.vercel.app/api/create-checkout-session",
       {
         method: "POST",
         headers: headers,
