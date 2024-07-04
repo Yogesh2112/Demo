@@ -1,9 +1,7 @@
-name: Vercel Deployment (Client and Server)
+name: Vercel Production Deployment
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_FRONTEND_PROJECT_ID: ${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}
-  VERCEL_BACKEND_PROJECT_ID: ${{ secrets.VERCEL_BACKEND_PROJECT_ID }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
 on:
@@ -12,46 +10,44 @@ on:
       - main
 
 jobs:
-  Deploy-Client:
+  Deploy-Frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Install Vercel CLI
-        run: npm install --global vercel
-        working-directory: ./client
+        run: npm install --global vercel@latest
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./client
+      - name: Set Frontend Vercel Project ID
+        run: echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}" >> $GITHUB_ENV
 
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./client
+      - name: Pull Vercel Environment Information for Frontend
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --org-id=${{ secrets.VERCEL_ORG_ID }} --cwd ./client
 
-      - name: Deploy Project Artifacts
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./client
+      - name: Build Frontend Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
-  Deploy-Server:
+      - name: Deploy Frontend Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --org-id=${{ secrets.VERCEL_ORG_ID }} --cwd ./client
+
+  Deploy-Backend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Install Vercel CLI
-        run: npm install --global vercel
-        working-directory: ./server
+        run: npm install --global vercel@latest
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./server
+      - name: Set Backend Vercel Project ID
+        run: echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_BACKEND_PROJECT_ID }}" >> $GITHUB_ENV
 
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./server
+      - name: Pull Vercel Environment Information for Backend
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
 
-      - name: Deploy Project Artifacts
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
-        working-directory: ./server
+      - name: Build Backend Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+
+      - name: Deploy Backend Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
