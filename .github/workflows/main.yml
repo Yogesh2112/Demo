@@ -20,6 +20,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Specify your desired Node.js version here
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -43,6 +48,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Specify your desired Node.js version here
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
