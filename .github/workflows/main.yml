@@ -45,6 +45,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug Frontend Directory
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "Contents: $(ls -la)"
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
@@ -52,10 +57,10 @@ jobs:
         run: echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}" >> $GITHUB_ENV
 
       - name: Pull Vercel Environment Information for Frontend
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd client
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
       - name: Build Frontend Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
       - name: Deploy Frontend Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd client
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
