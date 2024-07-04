@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.output-result-and-filters {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+.ais-ClearRefinements-button {
+  background: none;
+  /* color: black; */
+  border: none;
+}
+
+.search-panel__filters {
+  margin-right: 20px;
+  width: 30%;
+}
+
+.filter_container {
+  padding: 10px 30px;
+  background: #faf8f6;
+  border-radius: 5px;
+}
+
+.ais-RefinementList-list {
+  padding: 0px;
+  list-style: none;
+}
+
+.ais-RefinementList-item {
+  margin-top: 16px;
+}
+
+.ais-RefinementList-count {
+  background-color: rgb(229, 226, 226);
+  border: none;
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin-left: auto;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ais-RefinementList-checkbox {
+  margin-right: 10px;
+}
+
+.ais-RefinementList-label {
+  align-items: center;
+  display: flex;
+  color: #23263b;
+  /* font-size: 14px; */
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-panel__results {
+  width: 100%;
+  padding: 0px 32px;
+}
+
+.sort-by-wrapper {
+  font-weight: 300;
+  position: relative;
+  float: right;
+  color: #999;
+}
+
+.search-panel_item img {
+  border: 1px solid rgb(222, 218, 218);
+  border-radius: 5px;
+  width: 100%;
+  height: 250px;
+}
+
+.product-list-box .ais-Hits {
+  margin: 4px 0;
+  padding: 10px 0;
+  border-top: 2px solid #eee;
+  width: 100%;
+}
+
+.product-list-box .ais-Hits ol {
+  padding: 0px;
+}
+
+.product-list-box .ais-Hits-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  list-style: none;
+}
+
+.product-list-box .ais-Hits-item {
+  display: flex;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.product-list-box .ais-Hits-item:hover {
+  transform: scale(1.04);
+}
+
+.search-panel_item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Search Box Conatiner */
+.search-container {
+  margin: 10px 30px 30px;
+  margin-left: 27%;
+  /* padding-right: 32px; */
+}
+
+.search-container,
+.ais-SearchBox-submit {
+  top: 16px;
+}
+
+.ais-SearchBox-form {
+  position: relative;
+}
+
+.search-container input {
+  font-size: 18px;
+  /* padding-left: 100px; */
+  font-weight: 100;
+  padding: 10px 10px 5px 35px;
+  border: none;
+  border-bottom: 5px solid #eee;
+}
+
+.ais-SearchBox-input {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 20px;
+}
+
+.search-container input,
+.search-container input:focus {
+  transition: border-color 0.3s ease-in;
+  outline: 0;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  padding: 0;
+  overflow: visible;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.ais-SearchBox-submit svg {
+  width: 1em;
+  height: 1em;
+  fill: #8e8e8e;
+}
+
+.ais-SearchBox-submit {
+  position: absolute;
+  top: 0.8em;
+  left: 0.25em;
+}
+
+.ais-SearchBox-reset {
+  position: absolute;
+  top: 0.5em;
+  right: 0.25em;
+}
+
+.ais-Stats {
+  margin-bottom: 10px;
+}
+
+.ais-SortBy-select {
+  font-size: 16px;
+  /* padding-right: 14px; */
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: 0 0;
+}
+
+.ais-RefinementList-showMore {
+  margin: 10px 0px;
+  border: none;
+  background: none;
+  color: blue;
+}
+
+.variants h1 {
+  font-size: 18px;
+}
+
+.variants {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.variants div {
+  width: 48%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.pagination ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+}
+
+.pagination ul li {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 0px 4px;
+  background: rgba(234, 232, 232, 0.3);
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  color: #000;
+}
+

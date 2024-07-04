@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+.signupMainContainer {
+  width: 1200px;
+  min-height: calc(100vh - 70px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.signupPage {
+  width: 1000px;
+  height: 400px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px auto;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signupPage .sections {
+  display: flex;
+  justify-content: center;
+}
+
+.signupPage .sections .section1,
+.signupPage .sections .section2 {
+  width: 50%;
+  padding: 10px;
+  height: 100%;
+}
+
+.signupPage .sections .section1 img {
+  width: 250px;
+  height: 100px;
+}
+
+.signupPage .sections .section1 h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.signupPage .sections .section1 p {
+  font-size: 20px;
+  color: rgb(82, 82, 82);
+}
+
+.signupPage .sections .section2 .fullNameContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signupPage .sections .section2 input {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.signupPage .sections .section2 input:focus {
+  border: 2px solid blue;
+  outline: none;
+}
+
+.signupPage .sections .section2 .fullNameContainer input {
+  width: 48%;
+}
+
+.signupPage .sections .section2 .confirmPasswordInputContainer {
+  position: relative;
+}
+
+.signupPage .sections .section2 .inputError {
+  border-color: red;
+}
+
+.signupPage .sections .section2 .passwordToggleIcon {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  right: 10px;
+  cursor: pointer;
+}
+
+.signupPage .signupScreenButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.signupPage .signupScreenButtons .signupBtn {
+  border: none;
+  background-color: #7f5539;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.signupPage .signupScreenButtons .alreadyregisteredBtn,
+.signupPage .signupScreenButtons .cancelBtn {
+  width: max-content;
+  color: #7f5539;
+  border: none;
+  background-color: #fff;
+  text-align: left;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 18px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.signupPage .signupScreenButtons .alreadyregisteredBtn:hover,
+.signupPage .section2 .cancelBtn:hover {
+  cursor: pointer;
+  background-color: #e6ccb2;
+}
+
+.signupPage .signupScreenButtons .signupBtn:hover {
+  cursor: pointer;
+  background-color: #e6ccb2;
+  color: #7f5539;
+}

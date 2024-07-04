@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+.loginMainContainer {
+  width: 1200px;
+  min-height: calc(100vh - 70px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.loginPage {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px auto;
+}
+
+.loginPage img {
+  height: 70px;
+  width: 170px;
+  /* margin-left: 10px; */
+  /* border: 1px solid red; */
+  object-fit: cover;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.loginPage .sections .section1,
+.loginPage .sections .section2 {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid green; */
+  padding: 10px;
+  /* height: 100%; */
+  padding: 10px 20px;
+}
+
+.loginPage .sections .section1 h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.loginPage .sections .section1 p {
+  font-size: 16px;
+  color: rgb(53, 53, 53);
+}
+
+.loginPage .sections .section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.loginPage .sections .section2 input {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid grey;
+  /* outline: none; */
+  border-radius: 5px;
+}
+
+.loginPage .sections .section2 input:focus {
+  border: 2px solid blue;
+  outline: none;
+}
+
+.loginPage .sections .section2 .inputError {
+  border-color: red;
+}
+
+.loginPage .sections .section2 .emailInput {
+  margin-bottom: 20px;
+}
+
+.loginPage .sections .section2 .passwordInputContainer {
+  position: relative;
+}
+
+.loginPage .sections .section2 .passwordToggleIcon {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+
+.loginPage .sections .section2 .forgotPasswordButton {
+  width: max-content;
+  color: #7f5539;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #fff;
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.loginPage .loginScreenButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.loginPage .loginScreenButtons .loginButton {
+  border: none;
+  background-color: #7f5539;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.loginPage .loginScreenButtons .registerButton {
+  width: max-content;
+  color: #7f5539;
+  border: none;
+  background-color: #fff;
+  text-align: left;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 18px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.loginPage .section2 .forgotPasswordButton:hover,
+.loginPage .loginScreenButtons .registerButton:hover {
+  cursor: pointer;
+  background-color: #e6ccb2;
+}
+
+.loginPage .loginScreenButtons .loginButton:hover {
+  cursor: pointer;
+  color: #7f5539;
+  background-color: #e6ccb2;
+}
+
+.loginMainContainer .languageSwitcher {
+  width: 1000px;
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5px;
+}

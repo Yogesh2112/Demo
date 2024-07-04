@@ -1,0 +1,422 @@
+.cartMainContainer {
+  width: 1200px;
+  min-height: calc(100vh - 70px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.cartMainContainer .emptyCartContainer {
+  margin: auto;
+  width: 60%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cartMainContainer .emptyCartContainer:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
+.cartMainContainer .emptyCartContainer p {
+  text-align: center;
+  font-size: 24px;
+}
+
+.cartMainContainer .emptyCartContainer button {
+  width: 25%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #e6ccb2;
+  border: none;
+  border-radius: 5px;
+  /* align-self: flex-end; */
+  /* margin-right: 60px; */
+}
+
+.cartMainContainer .emptyCartContainer button:hover {
+  cursor: pointer;
+  background-color: #d8af86;
+}
+
+.cartContent {
+  width: 100%;
+}
+
+.shipping-address {
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px 30px;
+}
+
+.product-image {
+  float: left;
+  width: 20%;
+}
+.product-details {
+  float: left;
+  width: 37%;
+}
+.product-price {
+  float: left;
+  width: 12%;
+}
+.product-quantity {
+  float: left;
+  width: 12%;
+}
+.product-removal {
+  float: left;
+  width: 9%;
+}
+.product-line-price {
+  float: left;
+  width: 15%;
+  text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+/* Apply dollar signs */
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
+  content: "₹";
+}
+
+.shopping-cart {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0px 30px;
+}
+
+.itemsInCart {
+  width: 60%;
+}
+.itemsInCart h1,
+.summary h1 {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 30px;
+}
+.summary {
+  width: 25%;
+  padding: 0px 30px 10px;
+  margin: 5px;
+  margin-top: 55px;
+  /* background: rgb(209, 205, 205); */
+}
+
+.column-labels label {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.column-labels {
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+.totalAmount {
+  border-bottom: 1px solid black;
+}
+
+/* Product entries */
+.product {
+  position: relative;
+  height: 150px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.product-image img {
+  width: 100px;
+  height: 100px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product-details > div {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.remove-product {
+  width: 70px;
+  position: absolute;
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: 100px;
+  right: 23px;
+}
+
+.remove-product:hover {
+  cursor: pointer;
+  background-color: #a44;
+}
+/* Totals section */
+.totals .totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.totals-item label {
+  float: left;
+  clear: both;
+  width: 79%;
+}
+.totals-value,
+.totals-item-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+.discountAmount {
+  color: #494;
+  font-weight: bold;
+}
+
+.checkout {
+  width: 100%;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 9px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+
+.toggle-address {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.toggle-address:hover {
+  background-color: #e9ecef;
+}
+
+.address-details {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.address-details label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.address-details input {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.address-details input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.backButton {
+  width: 100%;
+  font-size: 17px;
+  background: none;
+  border: none;
+  padding: 10px;
+  color: #7f5539;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.backButton:hover {
+  border-radius: 5px;
+  background-color: #7f5539;
+  color: white;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid;
+    flex-direction: column;
+  }
+
+  .column-labels {
+    display: none;
+  }
+
+  .product-image {
+    float: right;
+    width: auto;
+    img {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+
+  .product-quantity {
+    width: 100px;
+  }
+
+  .product-quantity:before {
+    content: "x";
+  }
+
+  .product-removal {
+    width: auto;
+  }
+
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+}
+.shopping-cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-button1 {
+  margin: 0px 10px;
+  border: none;
+  background: none;
+  /* padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; */
+}
+
+.quantity-button1:disabled {
+  /* background-color: #e0e0e0; */
+  cursor: not-allowed;
+}
+
+.quantity-button1.minus {
+  color: #333;
+}
+
+.quantity-button1.plus {
+  color: #333;
+}
+
+.quantity-button1:hover:not(:disabled) {
+  background-color: #d0d0d0;
+}
+
+.product-quantity input {
+  width: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+}
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  .product-removal {
+    float: right;
+  }
+
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .product .product-line-price:before {
+    content: "Item Total: ₹";
+  }
+
+  .totals {
+    .totals-item {
+      label {
+        width: 60%;
+      }
+
+      .totals-value {
+        width: 40%;
+      }
+    }
+  }
+}

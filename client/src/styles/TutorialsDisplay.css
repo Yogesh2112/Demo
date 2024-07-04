@@ -1,0 +1,103 @@
+.tutorial-hit video {
+  width: calc(
+    100% - (20px * (3 -1)) / 3
+  ); 
+}
+
+.tutorial-hit p {
+  text-align: center; 
+}
+
+
+.tutorials-section-box .ais-Hits-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 20px; 
+}
+
+.tutorials-section-box .ais-Hits-item {
+  list-style-type: none; 
+}
+
+.search-bar-container {
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.search-bar-container .ais-SearchBox {
+  width: auto; 
+}
+
+.search-bar-container .ais-SearchBox-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar-container .ais-SearchBox-input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px; 
+  border: none;
+  font-size: 1rem;
+  outline: 2px solid #e6ccb2; 
+  background-color: #f2f2f2; 
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: 10px;
+  background-position-y: center;
+  width: 50%; 
+  margin: auto; 
+}
+
+.search-bar-container .ais-SearchBox-input {
+  box-sizing: border-box;
+}
+
+.search-bar-container .ais-SearchBox-submit,
+.search-bar-container .ais-SearchBox-reset {
+  display: none;
+}
+
+.tutorial-hit {
+  padding: 1rem;
+}
+
+.tutorial-hit .video-card {
+  background-color: white; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
+}
+
+.tutorial-hit .video-thumbnail {
+  width: 100%;
+  height: auto; 
+  border-bottom: solid thin #f2f2f2; 
+}
+
+.tutorial-hit .video-info {
+  padding: 0.5rem;
+}
+
+.tutorial-hit.video-info h3 {
+  margin-top: 0.5rem;
+}
+
+
+.tutorial-hit .watch-video-button {
+  text-decoration: none;
+  color: #bc6c25;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+.ais-Hits-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Three items per row */
+  gap: 20px;
+  padding: 10px;
+  list-style-type: none;
+}

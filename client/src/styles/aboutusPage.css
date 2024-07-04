@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+.aboutusMainContainer {
+  width: 1200px;
+  min-height: calc(100vh - 70px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 40px 0px;
+}
+
+.aboutusMainContainer .aboutContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.aboutusMainContainer .aboutContent .section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.aboutusMainContainer .aboutContent .section1 img {
+  height: 550px;
+  width: 50%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.aboutusMainContainer .aboutContent .section1 div h3 {
+  font-size: 22px;
+  padding-bottom: 20px;
+  color: #f9ae64;
+}
+
+.aboutusMainContainer .aboutContent .section1 div p {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.aboutusMainContainer .aboutContent .section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.aboutusMainContainer .aboutContent .section2 p:first-child {
+    font-size: 25px;
+    font-weight: 600;
+    /* text-decoration-line: underline;
+    text-decoration-style: wavy; */
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems .facilityCard{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 350px;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 10px;
+    /* border: 1px solid red; */
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems .facilityCard:hover{
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0,0.5);
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems .facilityCard img{
+    width: 30%;
+    height: 100px;
+    /* border: 1px solid red; */
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems .facilityCard .facilityHeading{
+    font-size: 22px;
+    font-weight: 600;
+    /* border: 1px solid red; */
+}
+
+.aboutusMainContainer .aboutContent .section2 .facilityItems .facilityCard .facilityDesc{
+    /* border: 1px solid red; */
+    font-size: 18px;
+    color: rgb(112, 112, 112);
+    height: 100px;
+    text-align: center;
+    padding: 0px 10px;
+}

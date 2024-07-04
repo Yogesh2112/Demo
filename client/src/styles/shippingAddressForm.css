@@ -1,0 +1,120 @@
+
+
+/* .container {
+  width: 1200px;
+  padding: 10vw 2rem 0;
+  margin: 0 auto;
+  height: 100vh;
+} */
+
+.address-container{
+  margin: 0px auto;
+  width: 90%;
+  padding:20px
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+ 
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.field__input {
+  padding: 5px;
+  margin: 0;
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 2px;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+.payment-container {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  width:90%
+
+}
+.payment-methods>label{
+  margin-top: 10px;
+}
+.submitted-address, .payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin-left: 20px;
+  width:90%
+}
+
+.submitted-address h3, .submitted-address h2, .payment-methods h3 {
+  margin-bottom: 10px;
+}
+.card-logo {
+    width: 120px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.btn{
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  width: 36%;
+  padding: 10px;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+}
+
+
+
+
+
+
+

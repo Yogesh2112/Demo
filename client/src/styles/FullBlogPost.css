@@ -1,0 +1,94 @@
+.full-blog-post {
+    max-width: 1200px; /* Limits the width for readability */
+    margin: 40px auto; /* Centering and adding vertical space */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+  
+  .full-blog-post-header {
+    text-align: center; /* Centered header elements */
+  }
+  
+  .full-blog-post-image {
+	width :100% ;/* Adjusted to take up only up to available width of parent*/
+	max-width :740px ;/* Limits absolute width of image*/
+	height:300px; 
+	margin-left:auto ;
+	margin-right:auto ;
+	display:block ;/* Ensures it takes its own line*/
+	border-radius :10px ;
+	box-shadow :0 -1px rgba(255,255,255,.5) inset ;
+    object-fit: cover;
+	
+}
+
+.full-blog-post-title {
+	font-size :2.2rem ;
+	color:#333 ;
+	margin-top :1rem ;
+	margin-bottom:2rem ;  
+	font-weight:bold ; 
+}
+
+.full-blog-post-meta {
+	display:flex ;
+	justify-content:space-around ;
+	flex-wrap:wrap ; 
+	font-style :italic ;
+	color:#888 ;
+    margin-top: 1.5rem;
+	margin-bottom :1.5rem ; /* More space below metadata before description starts*/
+}
+
+.full-blog-post-description,
+.full-blog-post-body {
+	max-width:1000px;
+	margin:auto;
+
+	text-align:center;/* Left aligned text is easier to read than justified*/
+
+	padding-top:.75rem;/* Space above description/body content*/
+	padding-bottom:.75rem;/* Space below description/body content*/
+}
+.full-blog-post-description{
+    font-size: 24px;
+}
+.rich-text-body h1,
+.rich-text-body h2,
+.rich-text-body h3,
+.rich-text-body h4,
+.rich-text-body h5,
+.rich-text-body h6 {
+	color:#333;
+	font-weight:normal;
+
+	padding-top:.75rem;/* Space above heading*/
+	padding-bottom:.25rem;/* Space below heading*/
+
+	border-bottom:solid .05rem #eee;/* Underline effect on headings*/
+
+	margin-bottom:20pt;/* More space after heading before next element starts*/
+}
+
+.rich-text-body p {
+	font-size:1em;/* Default size for readability*/
+	line-height:1.8em;
+
+	text-align:left;/* Left aligned paragraph text*/
+	margin-top:.5em; 
+	margin-bottom:.5em;
+
+    color:#444;
+	word-wrap:break-word;
+}
+  .rich-text-body a {
+      color:#0077cc ; /* Style links with a distinct color */
+      text-decoration:none ;/* Optional - remove underline from links */
+  }
+  
+  .rich-text-body a:hover,
+  .rich-text-body a:focus {
+      text-decoration :underline ;/* Restoring underline on hover/focus for accessibility */
+  }
