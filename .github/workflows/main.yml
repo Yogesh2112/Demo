@@ -23,13 +23,13 @@ jobs:
         run: echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}" >> $GITHUB_ENV
 
       - name: Pull Vercel Environment Information for Frontend
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --org-id=${{ secrets.VERCEL_ORG_ID }} --cwd ./client
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
       - name: Build Frontend Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
       - name: Deploy Frontend Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --org-id=${{ secrets.VERCEL_ORG_ID }} --cwd ./client
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
 
   Deploy-Backend:
     runs-on: ubuntu-latest
