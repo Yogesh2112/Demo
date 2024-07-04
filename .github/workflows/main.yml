@@ -37,14 +37,14 @@ jobs:
       - name: Pull Vercel Environment Information for Backend
         run: |
           echo "Running Vercel Pull in Current Directory: $(pwd)"
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server --debug
           echo "Running Vercel Pull in Current Directory: $(pwd)"
 
       - name: Build Backend Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server --debug
 
       - name: Deploy Backend Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./server --debug
 
   Deploy-Frontend:
     if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -68,12 +68,12 @@ jobs:
       - name: Pull Vercel Environment Information for Frontend
         run: |
           echo "Running Vercel Pull in Current Directory: $(pwd)"
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client --debug
           echo "Running Vercel Pull in Current Directory: $(pwd)"
 
       - name: Build Frontend Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --debug
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client --debug
 
       - name: Deploy Frontend Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --debug
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./client --debug
 
