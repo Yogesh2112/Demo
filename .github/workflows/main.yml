@@ -1,9 +1,10 @@
-name: Vercel Deployment (Client)
+name: Vercel Deployment (Client and Server)
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_FRONTEND_PROJECT_ID: ${{ secrets.VERCEL_FRONTEND_PROJECT_ID }}
   VERCEL_BACKEND_PROJECT_ID: ${{ secrets.VERCEL_BACKEND_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
 on:
   push:
@@ -17,23 +18,40 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Change directory to client
-      #   run: cd client
-
       - name: Install Vercel CLI
         run: npm install --global vercel
         working-directory: ./client
-        
 
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
         working-directory: ./client
 
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
         working-directory: ./client
 
       - name: Deploy Project Artifacts
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_FRONTEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
         working-directory: ./client
-  
+
+  Deploy-Server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+        working-directory: ./server
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
+        working-directory: ./server
+
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
+        working-directory: ./server
+
+      - name: Deploy Project Artifacts
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ env.VERCEL_BACKEND_PROJECT_ID }} --org-id=${{ env.VERCEL_ORG_ID }}
+        working-directory: ./server
