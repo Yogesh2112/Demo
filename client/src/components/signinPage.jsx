@@ -106,7 +106,7 @@ const SigninContent = ({ locale }) => {
       <img src={logo[0].url} alt="logo" />
       <div className="sections">
         <div className="section1">
-          <h3>{signIn}</h3>
+          <h3>{signIn} To your website</h3>
           <p>{signInDescription}</p>
         </div>
         <div className="section2">
